@@ -20,7 +20,7 @@ class BaseController extends  CI_Controller{
 
         parent::__construct();
 
-        $this->load->helper('url');
+        $this->load->helper(array('url','BaseException'));
         $this->load->library('session');
         $this->mod = strtolower($this->uri->rsegment(1));
         $this->act = strtolower($this->uri->rsegment(2));

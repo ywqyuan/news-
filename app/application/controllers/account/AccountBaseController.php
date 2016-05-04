@@ -1,6 +1,6 @@
 <?php
 /**
- * controller »ùÀà ÆäËûcontroller ¶¼ĞèÒª¼Ì³Ğ¸ÃÀà
+ * controller åŸºç±» å…¶ä»–controller éƒ½éœ€è¦ç»§æ‰¿è¯¥ç±»
  * Created by PhpStorm.
  * User: xm001
  * Date: 2016/5/4
@@ -10,10 +10,10 @@
 class AccountBaseController extends  CI_Controller{
 
     protected $pagesize = 10;
-    protected $view_data = null;    //ÊÓÍ¼Êı¾İ
+    protected $view_data = null;    //è§†å›¾æ•°æ®
     protected $mod = null;
     protected $act = null;
-    protected $content = null;     //ÊÓÍ¼Ò³Ãæ
+    protected $content = null;     //è§†å›¾é¡µé¢
 
     public function __construct(){
 
@@ -28,18 +28,18 @@ class AccountBaseController extends  CI_Controller{
         $this->act = $action;
         $action = preg_replace('/^do(.*)/', '$1', $action);
         $this->optKey = $this->mod . "." . $action;
-        //¼ì²éµÇÂ¼×´Ì¬, ¿ª·¢Ê±¿ÉÏÈ×¢ÊÍ¹Øµô
+        //æ£€æŸ¥ç™»å½•çŠ¶æ€, å¼€å‘æ—¶å¯å…ˆæ³¨é‡Šå…³æ‰
         $this->user_name = $this->checkLoginStatus();
 
         $this->view_data = array(
-            'js' => array(),    //¼ÓÔØJS
-            'css' => array(),    //¼ÓÔØCSS
+            'js' => array(),    //åŠ è½½JS
+            'css' => array(),    //åŠ è½½CSS
             'mod' => $this->mod,
         );
     }
 
     /**
-     * ¼ì²éµÇÂ¼×´Ì¬
+     * æ£€æŸ¥ç™»å½•çŠ¶æ€
      */
     private function checkLoginStatus()
     {

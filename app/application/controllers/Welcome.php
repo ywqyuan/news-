@@ -15,7 +15,12 @@ class Welcome extends BaseController {
 		$this->title = '首页--';
 		$this->view_data['title'] = '首页--';
 		$this->view_data['message'] = '网站首页';
-
 		$this->load->view('base',$this->view_data);
+	}
+	public function test(){
+		$array = array(
+			'message' =>'exception throw'
+		);
+		throwMessage($array);
 	}
 }
