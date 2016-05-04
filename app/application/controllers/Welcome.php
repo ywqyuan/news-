@@ -1,25 +1,21 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Welcome extends CI_Controller {
+require_once 'BaseController.php';
+class Welcome extends BaseController {
 
-	/**
-	 * Index Page for this controller.
-	 *
-	 * Maps to the following URL
-	 * 		http://example.com/index.php/welcome
-	 *	- or -
-	 * 		http://example.com/index.php/welcome/index
-	 *	- or -
-	 * Since this controller is set as the default controller in
-	 * config/routes.php, it's displayed at http://example.com/
-	 *
-	 * So any other public methods not prefixed with an underscore will
-	 * map to /index.php/welcome/<method_name>
-	 * @see https://codeigniter.com/user_guide/general/urls.html
-	 */
+	public function __construct(){
+
+		parent::__construct();
+	}
+
 	public function index()
 	{
-		$this->load->view('welcome_message');
+		$this->page = 'welcome_message';
+		$this->title = '首页--';
+		$this->view_data['title'] = '首页--';
+		$this->view_data['message'] = '网站首页';
+
+		$this->load->view('base',$this->view_data);
 	}
 }
